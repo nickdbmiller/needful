@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_26_224706) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_26_231802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_26_224706) do
     t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "reviews_id"
+    t.index ["reviews_id"], name: "index_products_on_reviews_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -52,10 +54,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_26_224706) do
     t.boolean "is_admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "reviews_id"
+    t.index ["reviews_id"], name: "index_users_on_reviews_id"
   end
 
   add_foreign_key "favorites", "products"
   add_foreign_key "favorites", "users"
+  add_foreign_key "products", "reviews", column: "reviews_id"
   add_foreign_key "reviews", "products"
   add_foreign_key "reviews", "users"
+  add_foreign_key "users", "reviews", column: "reviews_id"
 end
