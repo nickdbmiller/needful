@@ -1,6 +1,6 @@
 import Carousel from "../components/Carousel";
 import Hero from "../components/Hero";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 export default function LandingScreen() {
     return (
