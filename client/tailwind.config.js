@@ -8,12 +8,15 @@ module.exports = {
         rose: {
           1000: '#160309',
         }
-      }
+      },
+      fontFamily: {
+        'noto-display': ['"Noto Serif Display"', 'serif'],
+      },
     },
   },
   variants: {
     extend: {
-      backgroundColor: ["active"],      
+      backgroundColor: ["active"],
     },
   },
   plugins: [],
