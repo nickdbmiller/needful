@@ -3,7 +3,18 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        rose: {
+          1000: '#160309',
+        }
+      }
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ["active"],      
+    },
   },
   plugins: [],
 }
