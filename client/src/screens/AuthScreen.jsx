@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import Carousel from "../components/Carousel";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout/Layout";
 
@@ -78,12 +77,6 @@ export default function AuthScreen() {
                     </button>
                 </form>
             </section>
-            <div
-                className="font-noto-display text-2xl text-rose-1000 bg-rose-300 p-2 my-3"
-            >
-                <h3>Products</h3>
-                <Carousel />
-            </div>
         </Layout>
     )
 }
