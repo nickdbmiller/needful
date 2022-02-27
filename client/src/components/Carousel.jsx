@@ -1,5 +1,9 @@
+import ProductCard from "./ProductCard"
+
 export default function Carousel() {
     return (
-        <div>Carousel</div>
+        <div>
+            <ProductCard />
+        </div>
     )
 }
