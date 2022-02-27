@@ -6,7 +6,7 @@ export default function LandingScreen() {
     return (
         <Layout>
             <div
-                className="font-noto-display text-2xl text-rose-100 bg-rose-700 p-2 rounded-lg mx-6 my-3"
+                className="font-noto-display text-2xl text-rose-100 bg-rose-700 p-2 rounded-2xl mx-6 my-3"
             >
                 <Hero
                     text = "Nourish your life with what it needs."
@@ -19,7 +19,7 @@ export default function LandingScreen() {
                 <Carousel />
             </div>
             <div
-                className="font-noto-display text-2xl text-rose-1000 bg-rose-500 p-2 rounded-lg mx-6 my-3"
+                className="font-noto-display text-2xl text-rose-1000 bg-rose-500 p-2 rounded-2xl mx-6 my-3"
             >
                 <Hero
                     text = "Sustainable goods, for the good of all."

@@ -28,7 +28,7 @@ export default function Searchbar() {
                     setInput(e.target.value)
                     console.log(e.target.value)
                 }}
-                className="text-lg font-noto-display bg-rose-100 flex text-rose-1000 rounded-lg pl-2"
+                className="text-lg font-noto-display bg-rose-100 flex text-rose-1000 rounded-2xl pl-2"
             />
             <button
                 className="hover:text-rose-100 hover:-translate-y-0.5 transform transition

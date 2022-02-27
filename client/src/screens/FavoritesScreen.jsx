@@ -6,7 +6,7 @@ export default function FavoritesScreen() {
     return (
         <Layout>
             <div
-                className="font-noto-display text-2xl text-rose-100 bg-rose-700 p-2 rounded-lg mx-6 my-3"
+                className="font-noto-display text-2xl text-rose-100 bg-rose-700 p-2 rounded-2xl mx-6 my-3"
             >
                 <Hero
                     text = "Need anything? Add it here."
