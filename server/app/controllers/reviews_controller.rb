@@ -1,10 +1,18 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
+
+  # GET /reviews for product
+  def index
+    @product = Product.find(params[:product_id])
+    @reviews = @product.reviews
+
+    render json: @reviews, include: :user
+  end
 
   # GET /reviews
-  def index
+  def get_all_reviews
     @reviews = Review.all
-
     render json: @reviews
   end
 
@@ -16,9 +24,11 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
+    @review.user = @current_user
+    @review.product_id = params[:product_id]
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render json: @review, status: :created
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -36,6 +46,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   def destroy
     @review.destroy
+    render json: @review
   end
 
   private
