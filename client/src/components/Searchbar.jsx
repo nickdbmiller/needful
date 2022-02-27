@@ -26,6 +26,7 @@ export default function Searchbar() {
                     setInput(e.target.value)
                     console.log(e.target.value)
                 }}
+                className="text-lg font-noto-display bg-rose-100 flex text-rose-1000 rounded-lg pl-2"
             />
             <Link
                 to="/search"
