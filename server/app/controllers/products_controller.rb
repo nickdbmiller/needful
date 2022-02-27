@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /products
   def index
@@ -36,6 +37,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy
+    render json: @product
   end
 
   private
@@ -46,6 +48,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :price, :category, :info)
+      params.require(:product).permit(:title, :price, :category, :description, :image_url, :img_alt)
     end
 end
