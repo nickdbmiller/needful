@@ -1,5 +1,9 @@
+import Layout from "../components/Layout";
+
 export default function AuthScreen() {
     return (
-        <div>AuthScreen</div>
+        <Layout>
+            <div>AuthScreen</div>
+        </Layout>
     )
 }

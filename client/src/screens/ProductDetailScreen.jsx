@@ -1,5 +1,9 @@
+import Layout from "../components/Layout";
+
 export default function ProductDetailScreen() {
     return (
-        <div>ProductDetailScreen</div>
+        <Layout>
+            <div>ProductDetailScreen</div>
+        </Layout>
     )
 }

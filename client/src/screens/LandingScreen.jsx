@@ -1,5 +1,9 @@
+import Layout from "../components/Layout";
+
 export default function LandingScreen() {
     return (
-        <div>LandingScreen</div>
+        <Layout>
+            <div>LandingScreen</div>
+        </Layout>
     )
 }

@@ -1,5 +1,9 @@
+import Layout from "../components/Layout";
+
 export default function FavoritesScreen() {
     return (
-        <div>FavoritesScreen</div>
+        <Layout>
+            <div>FavoritesScreen</div>
+        </Layout>
     )
 }
