@@ -5,11 +5,15 @@ import Searchbar from './Searchbar.jsx';
 const Layout = (props) => (
     <div>
         <Header />
-        <div>
+        <div className='mb-36'>
             {props.children}
         </div>
-        <Searchbar />
-        <Navbar />
+        <footer
+            className='fixed w-full bottom-0'
+        >
+            <Searchbar />
+            <Navbar />
+        </footer>
     </div>
 )
 
