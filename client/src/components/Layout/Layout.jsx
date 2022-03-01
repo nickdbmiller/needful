@@ -12,7 +12,7 @@ const Layout = (props) => (
             className='fixed w-full bottom-0'
         >
             <Searchbar />
-            <Navbar />
+            <Navbar currentUser={props.currentUser} logout={props.logout}/>
         </footer>
     </div>
 )
