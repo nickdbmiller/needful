@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingScreen />} />
           <Route path="/auth" element={<AuthScreen setCurrentUser={setCurrentUser}/>} />
-          <Route path="/favorites" element={<FavoritesScreen />} />
+          <Route path="/favorites" element={<FavoritesScreen currentUser={currentUser}/>} />
           <Route path="/product/:id" element={<ProductDetailScreen currentUser={currentUser}/>} />
           <Route path="/search" element={<SearchScreen />} />
         </Routes>
