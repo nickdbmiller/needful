@@ -25,19 +25,24 @@ export default function Navbar(props) {
                 </li>
 
                 {/* Favorites */}
-                <li
-                    className="hover:text-rose-100 hover:-translate-y-0.5 transform transition
-                    focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-900 focus:ring-opacity-50
-                    active:text-rose-200"
-                >
-                    <Link
-                        className="flex flex-col"
-                        to="/favorites"
-                    >
-                        <FontAwesomeIcon className="text-2xl" icon={faHeart} />
-                        <h4>needs</h4>
-                    </Link>
-                </li>
+                {
+                    props.currentUser ?
+                        <li
+                            className="hover:text-rose-100 hover:-translate-y-0.5 transform transition
+                            focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-900 focus:ring-opacity-50
+                            active:text-rose-200"
+                        >
+                            <Link
+                                className="flex flex-col"
+                                to="/favorites"
+                            >
+                                <FontAwesomeIcon className="text-2xl" icon={faHeart} />
+                                <h4>needs</h4>
+                            </Link>
+                        </li>
+                    :
+                        null
+                }
 
                 {/* Login/Logout */}
                 <li
@@ -46,23 +51,23 @@ export default function Navbar(props) {
                     active:text-rose-200"
                 >
                     {props.currentUser ? 
-                    // Login Button
-                    <div
-                        className="flex flex-col"
-                        onClick={() => props.logout()}
-                    >
-                        <FontAwesomeIcon className="text-2xl" icon={faArrowRightFromBracket} />
-                        <h4>logout</h4>
-                    </div>
+                        // Login Button
+                        <div
+                            className="flex flex-col"
+                            onClick={() => props.logout()}
+                        >
+                            <FontAwesomeIcon className="text-2xl" icon={faArrowRightFromBracket} />
+                            <h4>logout</h4>
+                        </div>
                     :
-                    // Logout Button
-                    <Link
-                        className="flex flex-col"
-                        to="/auth"
-                    >
-                        <FontAwesomeIcon className="text-2xl" icon={faArrowRightToBracket} />
-                        <h4>login</h4>
-                    </Link>
+                        // Logout Button
+                        <Link
+                            className="flex flex-col"
+                            to="/auth"
+                        >
+                            <FontAwesomeIcon className="text-2xl" icon={faArrowRightToBracket} />
+                            <h4>login</h4>
+                        </Link>
                 }
                 </li>
             </ul>
