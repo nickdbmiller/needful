@@ -66,7 +66,7 @@ export default function Navbar(props) {
                             to="/auth"
                         >
                             <FontAwesomeIcon className="text-2xl" icon={faArrowRightToBracket} />
-                            <h4>login</h4>
+                            <h4>access</h4>
                         </Link>
                 }
                 </li>
