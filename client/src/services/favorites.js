@@ -7,8 +7,8 @@ export const getUserFavorites = async (user_id) => {
 }
 
 // CREATE Favorite (Auth Req)
-export const addFavorite = async (user_id, product_id) => {
-    const res = await api.post(`/users/${user_id}/favorites`, {favorite: product_id})
+export const addFavorite = async (product_id, user_id) => {
+    const res = await api.post(`/users/${user_id}/favorites`, {product_id, user_id})
     return res.data
 }
 
