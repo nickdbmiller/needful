@@ -1,25 +1,44 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Hero from "../components/Hero";
-import { loginUser } from "../services/user";
+import { loginUser, registerUser } from "../services/user";
 
 export default function AuthScreen(props) {
     const navigate = useNavigate()
 
+    // True: Signup, False: Login
+    const [formToggle, setFormToggle] = useState(true)
+
     const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const isAdmin = false
+
+    useEffect(() => {
+
+    }, [formToggle])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const loginData = {
-            username,
-            password
+        let res = null
+        if (formToggle) {
+            const registerData = {
+                username,
+                email,
+                password,
+                isAdmin
+            }
+            res = await registerUser(registerData)
+        } else {
+            const loginData = {
+                username,
+                password
+            }
+            res = await loginUser(loginData)
         }
-
-        const res = await loginUser(loginData)
         props.setCurrentUser(res)
-        navigate("/");
+        navigate("/")
     };
 
     return (
@@ -36,7 +55,7 @@ export default function AuthScreen(props) {
             <h3
                 className="text-4xl mb-2"
             >
-                Welcome
+                {formToggle ? "Signup" : "Login"}
             </h3>
 
             {/* Auth Form */}
@@ -56,6 +75,24 @@ export default function AuthScreen(props) {
                     onChange={(e) => setUsername(e.target.value)}
                     className="text-lg font-noto-display bg-rose-100 flex text-rose-1000 rounded-2xl pl-2"
                 />
+
+                {/* Email */}
+                {
+                    formToggle ?
+                        <>
+                            <label className="block mt-6" htmlFor="email">email</label>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="text-lg font-noto-display bg-rose-100 flex text-rose-1000 rounded-2xl pl-2"
+                            />
+                        </>
+                    :
+                        null
+                }
 
                 {/* Password */}
                 <label className="block mt-6" htmlFor="password">password</label>
@@ -78,6 +115,17 @@ export default function AuthScreen(props) {
                     enter
                 </button>
             </form>
+
+            {/* Switch Form Button */}
+            <h4>{formToggle ? "Already a user?" : "Need an Account?"}</h4>
+            <button
+                    onClick={() => setFormToggle(!formToggle)}
+                    className="bg-rose-300 text-rose-1000
+                    focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-900 focus:ring-opacity-50
+                    rounded-2xl py-1 px-3"
+            >
+                {formToggle ? "login" : "signup"}
+            </button>
         </section>
     )
 }
