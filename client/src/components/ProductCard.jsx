@@ -10,7 +10,7 @@ export default function ProductCard(props) {
                 <img
                     src={props.imgSrc}
                     alt={props.imgAlt}
-                    className="w-40"
+                    className="w-40 rounded-2xl"
                 />
                 <p>${props.price}</p>
             </div>
