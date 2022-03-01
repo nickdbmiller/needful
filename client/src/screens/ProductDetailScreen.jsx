@@ -47,7 +47,7 @@ export default function ProductDetailScreen(props) {
         fetchReviews()
 
         if (props.currentUser) fetchFavorites()
-    }, [id, props.currentUser, favToggle])
+    }, [id, props.currentUser, favToggle, product.id])
 
     const handleFavToggle = () => {
         if (favToggle) {
