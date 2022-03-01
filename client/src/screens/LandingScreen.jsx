@@ -1,10 +1,9 @@
 import Carousel from "../components/Carousel";
 import Hero from "../components/Hero";
-import Layout from "../components/Layout/Layout";
 
 export default function LandingScreen() {
     return (
-        <Layout>
+        <div>
             <div
                 className="font-noto-display text-2xl text-rose-100 bg-rose-700 p-2 rounded-2xl mx-6 my-3"
             >
@@ -31,6 +30,6 @@ export default function LandingScreen() {
                 <h3>Products</h3>
                 <Carousel />
             </div>
-        </Layout>
+        </div>
     )
 }
