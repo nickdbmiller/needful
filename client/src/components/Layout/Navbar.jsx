@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseChimney, faHeart, faArrowRightToBracket, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,13 +15,13 @@ export default function Navbar(props) {
                     focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-900 focus:ring-opacity-50
                     active:text-rose-200"
                 >
-                    <Link
+                    <NavLink
                         className="flex flex-col"
                         to="/"
                     >
                         <FontAwesomeIcon className="text-2xl" icon={faHouseChimney} />
                         <h4>home</h4>
-                    </Link>
+                    </NavLink>
                 </li>
 
                 {/* Favorites */}
@@ -32,13 +32,13 @@ export default function Navbar(props) {
                             focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-900 focus:ring-opacity-50
                             active:text-rose-200"
                         >
-                            <Link
+                            <NavLink
                                 className="flex flex-col"
                                 to="/favorites"
                             >
                                 <FontAwesomeIcon className="text-2xl" icon={faHeart} />
                                 <h4>needs</h4>
-                            </Link>
+                            </NavLink>
                         </li>
                     :
                         null
@@ -61,13 +61,13 @@ export default function Navbar(props) {
                         </div>
                     :
                         // Logout Button
-                        <Link
+                        <NavLink
                             className="flex flex-col"
                             to="/auth"
                         >
                             <FontAwesomeIcon className="text-2xl" icon={faArrowRightToBracket} />
                             <h4>access</h4>
-                        </Link>
+                        </NavLink>
                 }
                 </li>
             </ul>
