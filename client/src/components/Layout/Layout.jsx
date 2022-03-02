@@ -11,7 +11,7 @@ const Layout = (props) => (
         <footer
             className='fixed w-full bottom-0'
         >
-            <Searchbar />
+            <Searchbar query = {props.query} setQuery={props.setQuery}/>
             <Navbar currentUser={props.currentUser} logout={props.logout}/>
         </footer>
     </div>
