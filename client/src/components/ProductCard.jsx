@@ -4,7 +4,7 @@ export default function ProductCard(props) {
     return (
         <Link to = {`/product/${props.id}`}>
             <div
-                className="bg-rose-100 rounded-2xl"
+                className="bg-rose-100 rounded-2xl md:p-4 md:m-2"
             >
                 <h4>{props.title}</h4>
                 <img

@@ -132,7 +132,7 @@ export default function ProductDetailScreen(props) {
 
             {/* Review Section */}
             <section
-                className="font-noto-display text-2xl text-rose-1000 bg-rose-500 p-2 my-3"
+                className="font-noto-display text-2xl text-rose-1000 bg-rose-500 p-2 my-3 flex flex-col items-center"
             >
                 <div className='flex justify-between'>
                     <h3>Reviews</h3>
@@ -142,7 +142,7 @@ export default function ProductDetailScreen(props) {
                 {
                     reviews.length === 0 || reviews == null ?
                         <h4
-                            className='bg-rose-100 rounded-2xl p-3'
+                            className='bg-rose-100 rounded-2xl p-3 md:p-10 2xl:p-20'
                         >
                             No Reviews yet!</h4>
                     :

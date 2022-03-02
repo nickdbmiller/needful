@@ -16,7 +16,9 @@ export default function Carousel() {
     }, [])
 
     return (
-        <div>
+        <div
+            className="md:grid md:grid-cols-4 md:p-10 2xl:grid-cols-5"
+        >
             {
                 products.map((product) => {
                     return (
