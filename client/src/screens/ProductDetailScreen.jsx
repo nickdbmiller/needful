@@ -23,13 +23,11 @@ export default function ProductDetailScreen(props) {
     useEffect(() => {
         const fetchProduct = async () => {
             const res = await getOneProduct(id)
-            console.log("Product", res.id)
             setProduct(res)
         }
 
         const fetchReviews = async () => {
             const res = await getProductReviews(id)
-            console.log("Reviews", res)
             setReviews(res)
         }
 
@@ -50,10 +48,8 @@ export default function ProductDetailScreen(props) {
 
     const handleFavToggle = () => {
         if (favToggle) {
-            console.log(favorite)
             deleteFavorite(props.currentUser.id, favorite[0].id)
         } else {
-            console.log(parseInt(id), props.currentUser.id)
             addFavorite(parseInt(id), props.currentUser.id)
         }
         setFavToggle(!favToggle)
