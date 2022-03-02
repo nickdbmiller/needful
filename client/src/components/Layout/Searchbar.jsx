@@ -3,12 +3,13 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-export default function Searchbar() {
+export default function Searchbar(props) {
     const [input, setInput] = useState("");
     const navigate = useNavigate()
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        props.setQuery(input)
         navigate("/search")
     };
 
@@ -26,7 +27,6 @@ export default function Searchbar() {
                 placeholder="Search"
                 onChange={(e) => {
                     setInput(e.target.value)
-                    console.log(e.target.value)
                 }}
                 className="text-lg font-noto-display bg-rose-100 flex text-rose-1000 rounded-2xl pl-2"
             />
