@@ -11,6 +11,7 @@ function App() {
   const navigate = useNavigate()
 
   const [currentUser, setCurrentUser] = useState(null)
+  const [query, setQuery] = useState("")
 
   useEffect(() => {
     const getUser = async () => {
@@ -28,13 +29,13 @@ function App() {
 
   return (
     <div className="App">
-      <Layout currentUser={currentUser} logout={logout}>
+      <Layout currentUser={currentUser} logout={logout} query={query} setQuery={setQuery}>
         <Routes>
           <Route path="/" element={<LandingScreen />} />
           <Route path="/auth" element={<AuthScreen setCurrentUser={setCurrentUser}/>} />
           <Route path="/favorites" element={<FavoritesScreen currentUser={currentUser}/>} />
           <Route path="/product/:id" element={<ProductDetailScreen currentUser={currentUser}/>} />
-          <Route path="/search" element={<SearchScreen />} />
+          <Route path="/search" element={<SearchScreen query = {query}/>} />
         </Routes>
       </Layout>
     </div>
