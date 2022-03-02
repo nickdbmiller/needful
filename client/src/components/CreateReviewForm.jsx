@@ -18,6 +18,9 @@ export default function CreateReviewForm(props) {
         }
         createReview(props.productId, reviewData)
         props.setReviewToggle(!props.reviewToggle)
+        setTitle("")
+        setStars(5)
+        setContent("")
     }
 
     return (
