@@ -10,6 +10,7 @@ export default function Searchbar(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.setQuery(input)
+        setInput("")
         navigate("/search")
     };
 
