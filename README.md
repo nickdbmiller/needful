@@ -138,17 +138,12 @@ src/
 |  Day  | Deliverable   | Status
 | ---   | ---           | --- |
 |Feb 23 | Prompt / README           | Complete
-|Feb 24 | README / Pitch / Setup    | Incomplete
-|Feb 25 | Back End MRC / Testing    | Incomplete
-|Feb 26 | Backend Auth / Testing    | Incomplete
-|Feb 27 | Front End MRC / Testing   | Incomplete
-|Feb 28 | Front End Views           | Incomplete
-|Mar 1  | Styling Polish            | Incomplete
-|Mar 2  | Presentation              | Incomplete
-
-## Code Showcase
-```
-
-```
+|Feb 24 | README / Pitch / Setup    | Complete
+|Feb 25 | Back End MRC / Testing    | Complete
+|Feb 26 | Backend Auth / Testing    | Complete
+|Feb 27 | Front End MRC / Testing   | Complete
+|Feb 28 | Front End Views           | Complete
+|Mar 1  | Styling Polish            | Complete
+|Mar 2  | Presentation              | Complete
 
 ## [Change Log](https://github.com/nickdbmiller/needful/commits/main)
